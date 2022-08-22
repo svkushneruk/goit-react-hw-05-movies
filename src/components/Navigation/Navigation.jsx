@@ -1,3 +1,10 @@
+import { MainNavigation, NavigationLink } from './Navigation.styled';
+
 export const Navigation = () => {
-  return <nav></nav>;
+  return (
+    <MainNavigation>
+      <NavigationLink to="/">Home</NavigationLink>
+      <NavigationLink to="/movies">Movies</NavigationLink>
+    </MainNavigation>
+  );
 };
