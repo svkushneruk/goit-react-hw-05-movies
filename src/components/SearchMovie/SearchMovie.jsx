@@ -4,9 +4,11 @@ import {
   SearchInput,
   SearchBtn,
 } from 'components/SearchMovie/SearchMovie.styled';
+import * as API from 'services/MovieAPI';
 
 export const SearchMovie = () => {
   const [query, setQuery] = useState('');
+  const [searchList, setSearchList] = useState(null);
 
   const handleChange = e => {
     setQuery(e.target.value);
@@ -18,7 +20,7 @@ export const SearchMovie = () => {
       return;
     }
 
-    //   onSubmit(query);
+    API.getMoviesByKeyword(query).then(setSearchList);
   };
   return (
     <SearchForm onSubmit={handleFormSubmit}>

@@ -12,9 +12,9 @@ export const getTrendMovies = async () => {
     .then(response => response.results);
 };
 
-export const getMoviesByKeyword = async () => {
+export const getMoviesByKeyword = async query => {
   return await fetch(
-    `${BASE_URL}/search/movie?api_key=${KEY}&language=en-US&page=1&include_adult=false`
+    `${BASE_URL}/search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1&include_adult=false`
   )
     .then(response => {
       if (!response.ok) {
@@ -48,7 +48,7 @@ export const getCredits = async movie_id => {
       }
       return response.json();
     })
-    .then(response => response.results);
+    .then(response => response.cast);
 };
 
 export const getReviews = async movie_id => {

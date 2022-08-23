@@ -18,19 +18,20 @@ export const MovieDetailsView = () => {
       {film && (
         <>
           <FilmCard film={film} />
-          <h2>Additional inforamation</h2>
-          <ul>
-            <li>
-              <Link to="cast"> cast</Link>
-            </li>
-            <li>
-              <Link to="reviews"> reviews</Link>
-            </li>
-          </ul>
+          <div>
+            <h2>Additional inforamation</h2>
+            <ul>
+              <li>
+                <Link to="cast">Cast</Link>
+              </li>
+              <li>
+                <Link to="reviews">Reviews</Link>
+              </li>
+            </ul>
+            <Outlet />
+          </div>
         </>
       )}
-
-      <Outlet />
     </>
   );
 };
