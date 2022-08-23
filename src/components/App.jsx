@@ -6,6 +6,7 @@ import { MovieDetailsView } from 'views/MovieDetailsView/MovieDetailsView';
 import { SearchMovie } from './SearchMovie/SearchMovie';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
+import { NotFoundView } from 'views/NotFoundView/NotFoundView';
 
 // import { MovieDetails } from './MovieDetails/MovieDetails';
 
@@ -17,11 +18,12 @@ export const App = () => {
           <Route index element={<HomeView />} />
           <Route path="movies" element={<MoviesView />}>
             <Route index element={<SearchMovie />}></Route>
-            <Route path=":movieId" element={<MovieDetailsView />}>
-              <Route path="cast" element={<Cast />} />
-              <Route path="reviews" element={<Reviews />} />
-            </Route>
           </Route>
+          <Route path="movies/:movieId" element={<MovieDetailsView />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<NotFoundView />} />
         </Route>
       </Routes>
     </div>
