@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import {
+  SearchForm,
+  SearchInput,
+  SearchBtn,
+} from 'components/SearchMovie/SearchMovie.styled';
 
 export const SearchMovie = () => {
   const [query, setQuery] = useState('');
@@ -16,9 +21,14 @@ export const SearchMovie = () => {
     //   onSubmit(query);
   };
   return (
-    <form onSubmit={handleFormSubmit}>
-      <input type="text" name="query" onChange={handleChange} value={query} />
-      <button type="submit">Search</button>
-    </form>
+    <SearchForm onSubmit={handleFormSubmit}>
+      <SearchInput
+        type="text"
+        name="query"
+        onChange={handleChange}
+        value={query}
+      />
+      <SearchBtn type="submit">Search</SearchBtn>
+    </SearchForm>
   );
 };

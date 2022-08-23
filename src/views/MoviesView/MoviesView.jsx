@@ -1,9 +1,9 @@
-import { SearchMovie } from 'components/MovieDetails/SearchMovie/SearchMovie';
+import { Outlet } from 'react-router-dom';
 
 export const MoviesView = () => {
   return (
     <div>
-      <SearchMovie />
+      <Outlet />
     </div>
   );
 };

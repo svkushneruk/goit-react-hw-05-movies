@@ -35,7 +35,7 @@ export const getMovieDetails = async movie_id => {
       }
       return response.json();
     })
-    .then(response => response.results);
+    .then(response => response);
 };
 
 export const getCredits = async movie_id => {
