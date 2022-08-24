@@ -5,11 +5,12 @@ import {
   SearchBtn,
 } from 'components/SearchMovie/SearchMovie.styled';
 import * as API from 'services/MovieAPI';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { TrandingList, MovieLink } from 'views/HomeView/HomeView.styled';
 
 export const SearchMovie = () => {
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useSearchParams();
   const [searchList, setSearchList] = useState(null);
   const keyword = searchQuery.get('query') ?? '';
@@ -37,7 +38,12 @@ export const SearchMovie = () => {
           {searchList.map(movie => {
             return (
               <li key={movie.id}>
-                <MovieLink to={`/movies/${movie.id}`}>{movie.title}</MovieLink>
+                <MovieLink
+                  to={`/movies/${movie.id}`}
+                  state={{ from: location }}
+                >
+                  {movie.title}
+                </MovieLink>
               </li>
             );
           })}

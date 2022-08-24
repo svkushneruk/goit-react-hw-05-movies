@@ -3,8 +3,10 @@ import * as API from 'services/MovieAPI';
 import { useEffect } from 'react';
 
 import { Title, TrandingList, MovieLink } from './HomeView.styled';
+import { useLocation } from 'react-router-dom';
 
 export const HomeView = () => {
+  const location = useLocation();
   const [movies, setMovies] = useState(null);
   useEffect(() => {
     API.getTrendMovies().then(setMovies);
@@ -18,7 +20,12 @@ export const HomeView = () => {
           movies.map(movie => {
             return (
               <li key={movie.id}>
-                <MovieLink to={`/movies/${movie.id}`}>{movie.title}</MovieLink>
+                <MovieLink
+                  to={`/movies/${movie.id}`}
+                  state={{ from: location }}
+                >
+                  {movie.title}
+                </MovieLink>
               </li>
             );
           })}
