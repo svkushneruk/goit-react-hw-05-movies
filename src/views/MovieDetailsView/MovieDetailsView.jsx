@@ -11,7 +11,7 @@ import * as API from 'services/MovieAPI';
 import { FilmCard } from 'components/FilmCard/FilmCard';
 import { Wrapper } from './MovieDetailsView.styled';
 
-export const MovieDetailsView = () => {
+const MovieDetailsView = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { movieId } = useParams();
@@ -49,3 +49,5 @@ export const MovieDetailsView = () => {
     </>
   );
 };
+
+export default MovieDetailsView;

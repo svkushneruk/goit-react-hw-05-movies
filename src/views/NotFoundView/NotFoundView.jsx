@@ -8,3 +8,5 @@ export const NotFoundView = () => {
     </Wrapper>
   );
 };
+
+export default NotFoundView;

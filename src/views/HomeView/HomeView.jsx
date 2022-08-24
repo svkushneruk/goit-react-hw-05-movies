@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Title, TrandingList, MovieLink } from './HomeView.styled';
 import { useLocation } from 'react-router-dom';
 
-export const HomeView = () => {
+const HomeView = () => {
   const location = useLocation();
   const [movies, setMovies] = useState(null);
   useEffect(() => {
@@ -33,3 +33,5 @@ export const HomeView = () => {
     </div>
   );
 };
+
+export default HomeView;
