@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const ReviewCard = ({ info }) => {
   return (
     <div>
@@ -5,4 +6,11 @@ export const ReviewCard = ({ info }) => {
       <p>{info.content}</p>
     </div>
   );
+};
+
+ReviewCard.propTypes = {
+  info: PropTypes.shape({
+    author: PropTypes.string,
+    content: PropTypes.string,
+  }),
 };

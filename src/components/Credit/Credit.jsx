@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const Credit = ({ info }) => {
   return (
     <div>
@@ -9,4 +10,12 @@ export const Credit = ({ info }) => {
       <p>{info.character}</p>
     </div>
   );
+};
+
+Credit.protoTypes = {
+  info: PropTypes.shape({
+    profile_path: PropTypes.string,
+    name: PropTypes.string,
+    character: PropTypes.string,
+  }),
 };

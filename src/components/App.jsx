@@ -11,8 +11,6 @@ const MovieDetailsView = lazy(() =>
 );
 const NotFoundView = lazy(() => import('views/NotFoundView/NotFoundView'));
 
-// import { MovieDetails } from './MovieDetails/MovieDetails';
-
 export const App = () => {
   return (
     <div>

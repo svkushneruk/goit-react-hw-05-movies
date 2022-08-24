@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   CardWrapper,
   CardPoster,
@@ -31,4 +32,15 @@ export const FilmCard = ({ film }) => {
       </div>
     </CardWrapper>
   );
+};
+
+FilmCard.propTypes = {
+  film: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }),
 };
