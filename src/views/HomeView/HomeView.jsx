@@ -24,7 +24,7 @@ const HomeView = () => {
                   to={`/movies/${movie.id}`}
                   state={{ from: location }}
                 >
-                  {movie.title}
+                  {movie.title ?? movie.name}
                 </MovieLink>
               </li>
             );
