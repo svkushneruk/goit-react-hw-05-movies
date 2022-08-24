@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/831.dd68556d.chunk.js","mappings":"mKAUA,UARmB,WACjB,OACE,0BACE,SAAC,KAAD,KAGL,C","sources":["views/MoviesView/MoviesView.jsx"],"sourcesContent":["import { Outlet } from 'react-router-dom';\n\nconst MoviesView = () => {\n  return (\n    <div>\n      <Outlet />\n    </div>\n  );\n};\n\nexport default MoviesView;\n"],"names":[],"sourceRoot":""}
